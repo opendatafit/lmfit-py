@@ -685,10 +685,6 @@ class Minimizer:
             self.params = params
         if isinstance(self.params, Parameters):
             result.params = deepcopy(self.params)
-            print("ATTR self.params:", hasattr(self.params, 'attrs'))
-            print("ATTR params:", hasattr(params, 'attrs'))
-            if hasattr(self.params, 'attrs'):
-                result.params.attrs = deepcopy(self.params.attrs)
         elif isinstance(self.params, (list, tuple)):
             result.params = Parameters()
             for par in self.params:
