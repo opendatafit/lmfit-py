@@ -684,6 +684,8 @@ class Minimizer:
         if params is not None:
             self.params = params
         if isinstance(self.params, Parameters):
+            print("prepare_fit params.attrs:", getattr(params, 'attrs'))
+            print("prepare_fit after deepcopy params.attrs:", getattr(params, 'attrs'))
             result.params = deepcopy(self.params)
         elif isinstance(self.params, (list, tuple)):
             result.params = Parameters()

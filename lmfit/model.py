@@ -939,7 +939,9 @@ class Model:
         if params is None:
             params = self.make_params(verbose=verbose)
         else:
+            print("fit params.attrs:", getattr(params, 'attrs'))
             params = deepcopy(params)
+            print("fit after deepcopy params.attrs:", getattr(params, 'attrs'))
 
         # If any kwargs match parameter names, override params.
         param_kwargs = set(kwargs.keys()) & set(self.param_names)
