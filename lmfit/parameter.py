@@ -42,7 +42,7 @@ class Parameters(OrderedDict):
 
     """
 
-    def __init__(self, asteval=None, usersyms=None, *args, **kwds):
+    def __init__(self, asteval=None, usersyms=None, attrs={}, *args, **kwds):
         """
         Arguments
         ---------
@@ -70,6 +70,8 @@ class Parameters(OrderedDict):
             _syms.update(usersyms)
         for key, val in _syms.items():
             self._asteval.symtable[key] = val
+
+        self.attrs = attrs
 
     def copy(self):
         """Parameters.copy() should always be a deepcopy."""
