@@ -1517,7 +1517,6 @@ class ModelResult(Minimizer):
 
         """
         attrs = deepcopy(self.params.attrs)
-        print("conf_interval got attrs:", attrs)
         if self.ci_out is None:
             self.ci_out = conf_interval(self, self, **kwargs)
         self.params.attrs = attrs
